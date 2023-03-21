@@ -7,11 +7,11 @@ const App: Component = () => {
     console.log(state())
   })
   return (
-    <div class='flex flex-col justify-center items-center h-screen gap-8'>
-      <p class='text-4xl text-teal-700 text-center'>{state}</p>
+    <div class="flex flex-col justify-center items-center h-screen gap-8">
+      <p class="text-4xl text-teal-700 text-center">{state}</p>
       <button
-        class='p-2 bg-teal-600 rounded-lg hover:scale-125 duration-200'
-        type='button'
+        class="p-2 bg-teal-600 rounded-lg hover:scale-125 duration-200"
+        type="button"
         onClick={onIncrease}
       >
         +
