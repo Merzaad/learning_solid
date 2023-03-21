@@ -1,5 +1,4 @@
-import { Component, createEffect } from 'solid-js'
-import { createSignal } from 'solid-js'
+import { Component, createEffect, createSignal } from 'solid-js'
 
 const App: Component = () => {
   const [state, setState] = createSignal(0)
