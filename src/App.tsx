@@ -1,21 +1,23 @@
-import { Component, createEffect, createSignal } from 'solid-js'
+import { Component, createEffect, createSignal, onCleanup, onMount } from 'solid-js'
+import Button from '../components/Button'
 
 const App: Component = () => {
   const [state, setState] = createSignal(0)
+
   const onIncrease = () => setState((state) => state + 1)
+  onMount(() => {
+    console.log('mount')
+  })
+  onCleanup(() => {
+    console.log('cleanup')
+  })
   createEffect(() => {
-    console.log(state())
+    console.log('effect', state())
   })
   return (
     <div class="flex flex-col justify-center items-center h-screen gap-8">
       <p class="text-4xl text-teal-700 text-center">{state}</p>
-      <button
-        class="p-2 bg-teal-600 rounded-lg hover:scale-125 duration-200"
-        type="button"
-        onClick={onIncrease}
-      >
-        +
-      </button>
+      <Button onClick={onIncrease}>+</Button>
     </div>
   )
 }
